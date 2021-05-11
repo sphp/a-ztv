@@ -1,10 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>A to Z Media Streaming</title>
-<meta content='width=device-width, initial-scale=1' name='viewport'/>
-<!--<b:skin><![CDATA[]]></b:skin>-->
-<link href="css/style.css" rel="stylesheet" />
+	<title>A to Z Media Streaming</title>
+	<meta content='width=device-width, initial-scale=1' name='viewport'/>
+	<!--<b:skin><![CDATA[]]></b:skin>-->
+<style>
+*{margin: 0;}
+.container{margin: auto;}
+.row {display: flex;flex-wrap: wrap;justify-content: space-between;}
+.block {
+    background: #eee;
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.overview{
+	background: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	color: white;
+	display: none;
+	font-size: 0.8em;
+	padding: 4em 5px 5px;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+.block:hover .overview{display:block}
+.pagination{
+    margin: 20px auto;
+    text-align: center;
+}
+.block .genres, .block .title {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+}
+.block .title {
+	background: rgba(0,0,0,0) linear-gradient(0deg, rgb(0,0,0) 0%, rgba(0,0,0,0) 80%);
+	font-size: medium;
+	padding: 10px 0;
+	color: white;
+    bottom: 0;
+}
+.block a {color: white;text-decoration: none;}
+.block a:hover {color: lime;}
+.block .genres a {}
+.block .genres a:hover {color: yellow;}
+.block .genres {
+    background: rgba(0, 0, 0, 0) linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 90%);
+    color: white;
+    font-size: small;
+    padding: 10px 0;
+    top: 0;
+}
+.block img.poster {
+    height: 100%;
+    width: 100%;
+}
+ /* Extra small devices (phones, 480px and down) */
+@media only screen and (max-width: 480px) {.container{width: 100%}.block {width: 96%}}
+/* Medium devices (landscape tablets, 481px and up) */
+@media only screen and (min-width: 481px) {.container{width: 98%} .block {width: 46%}}
+/* Large devices (laptops/desktops, 768px and up) */
+@media only screen and (min-width: 768px) {.container{width: 96%} .block {width: 30%}.row {justify-content: space-evenly;}}
+/* Extra large devices (large laptops and desktops, 980px and up) */
+@media only screen and (min-width: 980px) {.container{width: 94%} .block {width: 23%}}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px){.container{width: 92%} .block {width: 18%}} 
+</style>
 <script>
 //<![CDATA[
 function _null(val){return val === null;}
@@ -26,6 +90,8 @@ var query = url.searchParams.get("query");
 var gid = url.searchParams.get("gid");
 //]]>
 </script>
+
+
 </head>
 <body>
 <div class='row topnav'>
