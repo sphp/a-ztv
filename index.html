@@ -76,7 +76,7 @@ function isset(val){return typeof val !== 'undefined';}
 function getKey(obj, val){return Object.keys(obj).find(key => obj[key] === val);}
 function indexOf(arr,val){for (var i = arr.length - 1; i >= 0; i--)if (arr[i] === val) return i; return false;}
 
-if (location.protocol !== "http:") location.protocol = "http:";
+//if (location.protocol !== "http:") location.protocol = "http:";
 var baseurl = location.protocol + '//' + location.host + location.pathname
 var url = new URL(window.location.href);
 
